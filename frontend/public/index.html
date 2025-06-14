@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Energy Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/css/dashboard.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar will be injected here -->
+        <div class="main-content">
+            <!-- Header will be injected here -->
+            <main class="content">
+                <div class="dashboard-grid">
+                    <!-- Device cards will be injected here -->
+                    <div class="chart-container">
+                        <h2>Energy Consumption (24h)</h2>
+                        <div class="chart-tabs">
+                            <button class="tab-btn active" data-device="fan">Fan</button>
+                            <button class="tab-btn" data-device="light">Light</button>
+                            <button class="tab-btn" data-device="ac">AC</button>
+                        </div>
+                        <canvas id="energyChart"></canvas>
+                    </div>
+                    <div class="stats-container">
+                        <div class="stat-card total-energy">
+                            <h3>Total Energy</h3>
+                            <p id="total-energy">0 kWh</p>
+                        </div>
+                        <div class="stat-card total-cost">
+                            <h3>Total Cost</h3>
+                            <p id="total-cost">$0.00</p>
+                        </div>
+                        <div class="stat-card carbon-footprint">
+                            <h3>CO₂ Saved</h3>
+                            <p id="carbon-footprint">0 kg</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../src/js/api.js"></script>
+    <script src="../src/js/chart.js"></script>
+    <script src="../src/components/header.js"></script>
+    <script src="../src/components/sidebar.js"></script>
+    <script src="../src/components/device-card.js"></script>
+    <script src="../src/js/main.js"></script>
+</body>
+</html>
